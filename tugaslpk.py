@@ -11,12 +11,19 @@ with st.sidebar :
     'Luas Bangun Datar Jajar Genjang',
     'Luas Bangun Datar Layang-layang',
     'Luas Bangun Datar Trapesium',
-    'Luas Bangun Datar Lingkaran'],
+    'Luas Bangun Datar Lingkaran',
+    'Luas dan Volume Kubus',
+    'Luas dan Volume Balok',
+    'Luas dan Volume Limas',
+    'Luas dan Volume Kerucut',
+    'Luas dan Volume Prisma Segitiga',
+    'Luas dan Volume Tabung',
+    'Luas dan Volume Bola',],
     default_index=0)
 
 st.caption('*POLITEKNIK AKA BOGOR*')
 st.markdown('Dibuat oleh **1E (PMIP): kelompok 10.**')
-st.caption(':smile:_:blue["Matematika mengajarkan bahwa tidak ada masalah di dunia ini tanpa solusi."]_ :sunglasses:')
+st.caption(':male-teacher:_:blue["Matematika mengajarkan bahwa tidak ada masalah di dunia ini tanpa solusi."]_')
 
 # halaman luas bangun datar persegi panjang
 if (selected == 'Luas Bangun Datar Persegi Panjang') :
@@ -34,12 +41,12 @@ if (selected == 'Luas Bangun Datar Persegi Panjang') :
 if (selected == 'Luas Bangun Datar Segitiga') :
     st.title('Luas Bangun Datar Segitiga')
 
-    alas = st.number_input ("Masukan Nilai Alas (cm)", 0, 1000)
-    tinggi = st.number_input ("Masukan Nilai Tinggi (cm)", 0, 1000)
+    alas = st.number_input ("Masukan Nilai Alas (cm)")
+    tinggi = st.number_input ("Masukan Nilai Tinggi (cm)")
     hitung = st.button ("Hitung Luas")
 
     if hitung :
-        luas = 0,5 * alas * tinggi
+        luas = (alas * tinggi)/2
         st.success (f"Luas Segitiga Adalah = {luas} cm^2")
 
 # halaman hitung luas persegi 
@@ -74,7 +81,7 @@ if (selected == 'Luas Bangun Datar Layang-layang') :
     hitung = st.button ("Hitung Luas")
 
     if hitung :
-        luas = 0,5 * x * y
+        luas = (x * y)/2
         st.success (f"Luas Layang- layang Adalah = {luas} cm^2")
 
 # halaman hitung luas Trapesium 
@@ -98,5 +105,165 @@ if (selected == 'Luas Bangun Datar Lingkaran'):
     hitung = st.button ("Hitung Luas")
 
     if hitung :
-        luas = 3.14 * r * r
-        st.success (f"Luas Lingkaran Adalah = {luas} cm^2")
+        luas = 3.14 *(r * r)
+        st.success (f"Luas Lingkaran Adalah = {luas} cm^2")
+        
+# halaman hitung luas dan volume kubus
+if (selected == 'Luas dan Volume Kubus') :
+    st.title('Luas Kubus')
+    
+    r = st.number_input ("Masukan Nilai Panjang Rusuk (cm)", 0)
+    hitung = st.button ("Hitung Luas")
+    
+    if hitung :
+        luas = 6*r*r
+        st.success (f"Luas Kubus Adalah = {luas} cm^2")
+        
+if (selected == 'Luas dan Volume Kubus') :
+    st.title('Volume kubus')
+    
+    r = st.number_input ("Masukan Nilai Panjang rusuk (cm)", 0)
+    hitung = st.button ("Hitung Volume")
+    
+    if hitung :
+        Volume = r*r*r
+        st.success (f"Volume Kubus Adalah = {Volume} cm^3")
+
+# halaman hitung luas dan volume Balok
+if (selected == 'Luas dan Volume Balok') :
+    st.title('Luas Balok')
+    
+    p = st.number_input ("Masukan Nilai Panjang (cm)", 0)
+    l = st.number_input ("Masukan Nilai Lebar (cm)", 0)
+    t = st.number_input ("Masukan Nilai Tinggi (cm)", 0)
+    hitung = st.button ("Hitung Luas")
+    
+    if hitung :
+        luas = 2*((p*l)+(p*t)+(l*t))
+        st.success (f"Luas Balok Adalah = {luas} cm^2")
+        
+if (selected == 'Luas dan Volume Balok') :
+    st.title('Volume Balok')
+    
+    p = st.number_input ("Masukan Nilai panjang (cm)", 0)
+    l = st.number_input ("Masukan Nilai lebar (cm)", 0)
+    t = st.number_input ("Masukan Nilai tinggi (cm)", 0)
+    hitung = st.button ("Hitung Volume")
+    
+    if hitung :
+        Volume = p*l*t
+        st.success (f"Volume Balok Adalah = {Volume} cm^3")
+
+# halaman hitung luas dan volume Limas
+if (selected == 'Luas dan Volume Limas') :
+    st.title('Luas Limas')
+    
+    la = st.number_input ("Masukan Nilai Luas Alas (cm)", 0)
+    ls = st.number_input ("Masukan Nilai Luas Sisi Tegak (cm)", 0)
+    hitung = st.button ("Hitung Luas")
+    
+    if hitung :
+        luas = la+ls
+        st.success (f"Luas Limas Adalah = {luas} cm^2")
+        
+if (selected == 'Luas dan Volume Limas') :
+    st.title('Volume Limas')
+    
+    la = st.number_input ("Masukan Nilai Luas alas (cm)", 0)
+    t = st.number_input ("Masukan Nilai Tinggi (cm)", 0)
+    hitung = st.button ("Hitung Volume")
+    
+    if hitung :
+        Volume = 0.3*la*t
+        st.success (f"Volume Limas Adalah = {Volume} cm^3")
+
+# halaman hitung luas dan volume Kerucut
+if (selected == 'Luas dan Volume Kerucut') :
+    st.title('Luas Kerucut')
+    
+    r = st.number_input ("Masukan Nilai jari-jari (cm)", 0)
+    s = st.number_input ("Masukan Nilai garis miring (cm)", 0)
+    hitung = st.button ("Hitung Luas")
+    
+    if hitung :
+        luas = 3.14*r*(r+s)
+        st.success (f"Luas Limas Adalah = {luas} cm^2")
+        
+if (selected == 'Luas dan Volume Kerucut') :
+    st.title('Volume Kerucut')
+    
+    r = st.number_input ("Masukan Nilai Jari-jari (cm)", 0)
+    t = st.number_input ("Masukan Nilai Tinggi (cm)", 0)
+    hitung = st.button ("Hitung Volume")
+    
+    if hitung :
+        Volume = 0.3*3.14*r*r*t
+        st.success (f"Volume Kerucut Adalah = {Volume} cm^3")
+        
+# halaman hitung luas dan volume Prisma Segitiga
+if (selected == 'Luas dan Volume Prisma Segitiga') :
+    st.title('Luas Prisma Segitiga')
+    
+    la = st.number_input ("Masukan Nilai Luas alas (cm)", 0)
+    ka = st.number_input ("Masukan Nilai Keliling alas (cm)", 0)
+    t = st.number_input ("Masukan Nilai Tinggi (cm)", 0)
+    hitung = st.button ("Hitung Luas")
+    
+    if hitung :
+        luas = (2*la)+(ka*t)
+        st.success (f"Luas Prisma Segitiga Adalah = {luas} cm^2")
+        
+if (selected == 'Luas dan Volume Prisma Segitiga') :
+    st.title('Volume Prisma Segitiga')
+    
+    la = st.number_input ("Masukan Nilai Luas Alas (cm)", 0)
+    t = st.number_input ("Masukan Nilai tinggi (cm)", 0)
+    hitung = st.button ("Hitung Volume")
+    
+    if hitung :
+        Volume = la*t
+        st.success (f"Volume Prisma Segitiga Adalah = {Volume} cm^3")
+
+# halaman hitung luas dan volume Tabung
+if (selected == 'Luas dan Volume Tabung') :
+    st.title('Luas Tabung')
+    
+    r = st.number_input ("Masukan Nilai Jari-Jari (cm)", 0)
+    t = st.number_input ("Masukan Nilai Tinggi (cm)", 0)
+    hitung = st.button ("Hitung Luas")
+    
+    if hitung :
+        luas = 2*3.14*r*(t+r)
+        st.success (f"Luas Tabung Adalah = {luas} cm^2")
+        
+if (selected == 'Luas dan Volume Tabung') :
+    st.title('Volume Tabung')
+    
+    r = st.number_input ("Masukan Nilai Jari-jari (cm)", 0)
+    t = st.number_input ("Masukan Nilai tinggi (cm)", 0)
+    hitung = st.button ("Hitung Volume")
+    
+    if hitung :
+        Volume = 3.14*r*r*t
+        st.success (f"Volume Tabung Adalah = {Volume} cm^3")
+        
+# halaman hitung luas dan volume Bola
+if (selected == 'Luas dan Volume Bola') :
+    st.title('Luas Bola')
+    
+    r = st.number_input ("Masukan Nilai Jari-Jari (cm)", 0)
+    hitung = st.button ("Hitung Luas")
+    
+    if hitung :
+        luas = 4*3.14*r*r
+        st.success (f"Luas Bola Adalah = {luas} cm^2")
+        
+if (selected == 'Luas dan Volume Bola') :
+    st.title('Volume Bola')
+    
+    r = st.number_input ("Masukan Nilai Jari-jari (cm)", 0)
+    hitung = st.button ("Hitung Volume")
+    
+    if hitung :
+        Volume = 1.3*3.14*r*r*r
+        st.success (f"Volume Bola Adalah = {Volume} cm^3")
