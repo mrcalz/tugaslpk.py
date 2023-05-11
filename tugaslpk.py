@@ -5,7 +5,8 @@ from streamlit_option_menu import option_menu
 # navigasi sidebar:
 with st.sidebar :
     selected = option_menu ('Menghitung Luas Dan Volume Bangun',
-    ['Luas Bangun Datar Persegi Panjang',
+    ['Informasi Singkat',
+    'Luas Bangun Datar Persegi Panjang',
     'Luas Bangun Datar Segitiga', 
     'Luas Bangun Datar Persegi',
     'Luas Bangun Datar Jajar Genjang',
@@ -24,6 +25,11 @@ with st.sidebar :
 st.caption('*POLITEKNIK AKA BOGOR*')
 st.markdown('Dibuat oleh **1E (PMIP): kelompok 10.**')
 st.caption(':male-teacher:_:blue["Matematika mengajarkan bahwa tidak ada masalah di dunia ini tanpa solusi."]_')
+
+# halaman informasi singkat
+if (selected == 'Informasi Singkat') :
+    st.title('Bangun Datar dan Bangun Ruang')
+    st.write('Bangun datar merupakan sebuah bangun geometri dua yang memiliki permukaan datar serta memiliki dua dimensi, yakni panjang dan lebar. Permukaan bagun datar biasanya dibatasi oleh garis lurus ataupun lengkung.Bangun datar mempunyai berbagai bentuk, seperti segitiga, persegi, persegi panjang, lingkaran, trapesium, dan jajargenjang. Bangun ruang adalah sebuah bangun geometri yang berisikan volume dan isi, selain itu juga bangun ruang juga memiliki tiga komponen penyusun lain berupa dimensi tiga yang mempunyai sifat-sifat tertentu, yakni dengan adanya sisi (bidang), rusuk, dan titik sudut. Adapun macam-macam bangun ruang, yaitu kubus, balok, prisma, limas, tabung, kerucut, dan bola')
 
 # halaman luas bangun datar persegi panjang
 if (selected == 'Luas Bangun Datar Persegi Panjang') :
